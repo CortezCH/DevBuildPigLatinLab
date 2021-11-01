@@ -7,6 +7,18 @@ namespace PigLatin
 {
     class PigLatin
     {
+        public string MainCall(string userInput)
+        {
+            string[] splitApart = userInput.Split(' ');
+            string translation = string.Empty;
+
+            foreach (string word in splitApart)
+            {
+                translation += ToPigLatin(word) + " ";
+            }
+
+            return translation.ToLower().Trim();
+        }
 
         public bool IsVowel(char c)
         {
